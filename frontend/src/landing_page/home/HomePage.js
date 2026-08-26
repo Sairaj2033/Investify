@@ -8,7 +8,7 @@ import OpenAccount from '../OpenAccount';
 import NavBar from '../Navbar';
 import Footer from '../Footer';
 
-function Homepage() {
+function HomePage() {
     return ( 
       <>
       <NavBar/>
@@ -19,9 +19,8 @@ function Homepage() {
       <Education/>
       <OpenAccount/>
       <Footer/>
-
       </>
      );
 }
 
-export default Homepage;
+export default HomePage;
