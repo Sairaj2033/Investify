@@ -47,9 +47,7 @@ function ProductPage() {
         appStore="https://apps.apple.com/in/app/zerodha-varsity/id1474610753"
        />
       <div className='text-centre' >
-            <h5  >Want to know more about our technology stack? Check out the Zerodha.tech blog.
-
-</h5>
+           
       </div>
   
        <Universe/>

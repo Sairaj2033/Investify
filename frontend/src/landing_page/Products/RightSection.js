@@ -17,7 +17,7 @@ function RightSection({imageURL,productName,productDescription, learnMore}) {
             
         </div>
         <div className='col-7 '>
-        <img style={{width:'80%', margin:'4rem'}} src={imageURL}></img>
+        <img style={{width:'60%', margin:'4rem'}} src={imageURL}></img>
         </div>
         </div>
         

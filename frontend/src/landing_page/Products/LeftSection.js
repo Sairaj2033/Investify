@@ -6,7 +6,7 @@
 
         <div className='row'>
             <div className='col-7'>
-        <img style={{width:'80%', margin:'4rem'}} src={imageURL}></img>
+        <img style={{width:'60%', margin:'4rem'}} src={imageURL}></img>
         </div>
 
         <div className='col-5 mt-5' style={{padding:'4rem'}}>
