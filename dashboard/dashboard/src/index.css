@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.menu-container {
+  display: flex;
+}
+
+.topbar-container {
+ 
+  font-size: 14px;
+  
+}
+
+.indices-container {
+  border-bottom: 1px solid rgb(175, 175, 175);
+  border-right: 1px solid rgb(175, 175, 175);
+  display: flex;
+  margin: 0;
+  
+}
+
+.indices-c-2 {
+  margin: 0 1rem;
+  display: flex;
+}
+
+.nifty {
+  display: flex;
+}
+
+.menu-container {
+ border-bottom: 1px solid rgb(175, 175, 175);
+ 
+  width: 100%;
+}
+
+.menu {
+  font-size: 14px;
+  display: flex;
+  margin:0 18rem;
+  list-style-type: none;
+
+  
+}
+
+.app-nav {
+display: flex;
+justify-content: center;
+width: fit-content  !important;
+}
+
+
+
+
+.topbar-container {
+  display: flex;
+  width: 100%;
+  height: 54px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+/* Exact styles from Zerodha inspector */
+.header-left {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 38px;
+  border-right: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  
+  font-size: 16px;
+}
+
+.header-left .instrument {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-left .title {
+  color: #444;
+}
+
+.header-left .price {
+  color: #df514c;
+}
+
+.header-left .change {
+  color: #9b9b9b;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.header-right-wrapper {
+  width: 72%;
+  height: 100%;
+}
+
+.nav-1 {
+  padding: 0 16px;
+}
