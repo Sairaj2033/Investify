@@ -8,19 +8,23 @@ import Positions from './Positions';
 import Summary from './Summary';
 import Apps from './Apps';
 import Holdings from './Holdings';
-import WatchList from './WatchList';
+import Bids from './Bids';
+
 
 
 function Dashboard() {
     return ( 
-       <div className='dashboard-container'>
-        <Watchlist/>
-          <div className='content'>
+       <div className='dashboard-container'  >
+        
+         <Watchlist/> {/*  LEFT */}
+         
+          <div className='content'> {/*  RIGHT */}
           <Routes>
             <Route exact path="/" element={<Summary/>} />
             <Route exact path="/orders" element={<Orders/>} />
             <Route exact path="/holdings" element={<Holdings/>} />
-            <Route exact path="/postions" element={<Positions/>} />
+            <Route exact path="/positions" element={<Positions/>} />
+            <Route exact path="/bids" element={<Bids/>} />
             <Route exact path="/funds" element={<Funds/>} />
             <Route exact path="/apps" element={<Apps/>} />           
           </Routes>
