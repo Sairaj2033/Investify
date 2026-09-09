@@ -148,3 +148,38 @@ font-size: 15px;
   width: 3.2%;
   height: 100%;
 }
+
+.item{
+  border-bottom: 1px solid rgb(211, 211, 211);
+
+  height: 2.5rem;
+}
+
+.profit {
+  color: #41b883; /* Zerodha green */
+}
+
+.loss {
+  color: #ff5722; /* Zerodha red */
+}
+
+.t-head{
+  width: 100%;
+  font-weight:300;
+  font: size 15px;
+  border-top:rgb(232, 231, 231) 1px solid;
+  height: 4rem;
+}
+
+.t-head-title{
+  
+  font-weight: lighter;
+  opacity: 60%;
+  padding: 1rem 0.5rem;
+}
+
+.order-table{
+  width: 100%;
+  
+}
+
