@@ -15,6 +15,100 @@ code {
 }
 
 
+
+
+/* Container & Headers */
+.username{
+  margin-top:5rem ;
+  border-bottom:1px solid rgb(214, 213, 213) ;
+  font-weight: 400;
+  color: #444444;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 2rem 0;
+}
+
+/* Section Title */
+.section span p {
+  margin: 5rem 0 5rem 0 ;
+  font-size: 1.1rem;
+  color: #666666;
+  font-weight: 400;
+ 
+}
+
+/* Data Flex Layout */
+.data {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin-bottom:4 rem;
+}
+
+/* Left Big Numbers */
+.first {
+  min-width: 400px;
+  border-right: 1px solid #e0e0e0 ;
+}
+
+.first h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #444444;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.first h3.profit {
+  color: #41b883;
+}
+
+.first h3.loss {
+  color: #ff5722;
+}
+
+.first h3 small {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.first p {
+  font-size: 0.85rem;
+  color: #9b9b9b;
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+
+/* Vertical Divider Line */
+.data hr {
+  height: 50px;
+  border: none;
+  border-left: 1px solid #e0e0e0;
+  margin: 0 3rem;
+}
+
+/* Right Detail Column */
+.second p {
+  font-size: 0.85rem;
+  color: #9b9b9b;
+  margin: 0.5rem 0;
+}
+
+.second p span {
+  color: #444444;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+
+
+
 .menu-container {
   display: flex;
 }
@@ -183,3 +277,158 @@ font-size: 15px;
   
 }
 
+
+
+/* Remove bullet points and default padding */
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Align stock name and price/info horizontally */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.85rem;
+}
+
+.item p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Keep percent, icon, and price neatly aligned on the right */
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Green for Up / Profit */
+.up,
+.profit {
+  color: #41b883;
+}
+
+/* Red for Down / Loss */
+.down,
+.loss {
+  color: #ff5722;
+}
+
+
+
+/* buttons */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base button styles */
+.actions button {
+  border: none;
+  border-radius: 2px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+}
+
+.actions button:hover {
+  opacity: 0.90;
+}
+
+/* Buy Button */
+.actions .buy {
+  background-color: #4184f3;
+  color: #ffffff;
+  padding: 0 0.65rem;
+}
+
+/* Sell Button */
+.actions .sell {
+  background-color: #ff5722;
+  color: #ffffff;
+  padding: 0 0.65rem;
+}
+
+/* Analytics & More Icon Buttons */
+.actions .action {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #666666;
+  width: 28px;
+  padding: 0;
+}
+
+.actions .action .icon {
+  font-size: 16px;
+}
+
+/* Parent row positioning context */
+.list li {
+  position: relative;
+}
+
+/* Align button container to the far right */
+.actions {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Flex layout to align buttons horizontally */
+.actions span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+
+
+/* ORDERS */
+
+
+.orders {
+  width: 100%;
+  height: 90vh;
+
+}
+
+.no-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-orders .icon {
+  transform: scale(4);
+  color: rgb(173, 173, 173);
+  display: block;
+}
+
+.no-orders p {
+  margin-top: 6%;
+  color: rgb(173, 173, 173);
+  font-size: 1rem;
+  font-weight: 300;
+}

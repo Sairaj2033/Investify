@@ -3,9 +3,9 @@ import React from "react";
 const Summary = () => {
   return (
     <>
-      <div className="username">
-        <h6>Hi, User!</h6>
-        <hr className="divider" />
+      <div className="username" >
+        <h4>Hi, User!</h4>
+       
       </div>
 
       <div className="section">
@@ -15,7 +15,7 @@ const Summary = () => {
 
         <div className="data">
           <div className="first">
-            <h3>3.74k</h3>
+            <h3 style={{margin:'2rem 2rem 2rem 0'}}>3.74k</h3>
             <p>Margin available</p>
           </div>
           <hr />
@@ -39,7 +39,7 @@ const Summary = () => {
 
         <div className="data">
           <div className="first">
-            <h3 className="profit">
+            <h3 className="profit" style={{margin:'2rem 2rem 2rem 0'}}>
               1.55k <small>+5.20%</small>{" "}
             </h3>
             <p>P&L</p>

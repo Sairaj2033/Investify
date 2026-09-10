@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Orders() {
-    return ( 
-        <h1>
-            Orders
-        </h1>
-     );
-}
+const Orders = () => {
+  return (
+    <div className="orders">
+      <div className="no-orders">
+        <p>You haven't placed any orders today</p>
+
+        <Link to={"/"} className="btn btn-primary">
+          Get started
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export default Orders;
