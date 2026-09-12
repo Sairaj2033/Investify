@@ -12,8 +12,8 @@ const app = express();
 
 
 
-app.get('/addHoldings',async(req,res)=> {
-    let tempHoldings= [
+app.get('/addPositions',async(req,res)=> {
+    let newPosition= [
   {
     name: "BHARTIARTL",
     qty: 2,
@@ -127,7 +127,7 @@ app.get('/addHoldings',async(req,res)=> {
 
   tempHoldings.forEach((item)=> {
       let newHolding = new HoldingsModel({
-          qty:  item.number,
+          qty:  item.qty,
           name: item.name,
           price:item.price,
           avg:  item.avg,
