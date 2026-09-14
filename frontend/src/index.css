@@ -16,3 +16,14 @@ code {
   margin-left:40px;
   
 }
+
+.form {
+ 
+  justify-content: center;
+  margin: 4rem;
+}
+
+.form-bg {
+ 
+  margin: 3rem 0 0 3rem;
+}

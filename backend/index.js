@@ -1,15 +1,24 @@
  require('dotenv').config(); 
- 
+
+const cookieParser = require('cookie-parser'); 
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser  = require('body-parser');
+const cors = require('cors');
 
 const { HoldingsModel } = require('./model/HoldingsModel');
 const { PositionsModel } = require('./model/PositionsModel');
-
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3002 ;
 const uri = process.env.MONGO_URL
-
 const app = express();
+const bcrypt = require('bcrypt');
+
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(cookieParser())
+
+app.use("/", require("./routes/AuthRoute"));
 
 // app.get("/addHoldings", async (req,res)=> {
 //    let tempHoldings = [
@@ -197,6 +206,23 @@ app.get("/allPositons", async (req, res) => {
   let allPositions = await PositionsModel.find({});
   res.json(allPositions);
 });
+
+
+//setting up cookie
+app.get("/login",function (req, res) {
+
+// Load hash from your password DB.
+bcrypt.compare("password", "$2b$10$b5hBIG1Z3KjpIK9UeGpv1ewk8YE2FIYrNoaDcXmnLa1xYw5J5qA.W"
+, function(err, result) {
+    // result == true
+    console.log(result);
+});
+
+
+  // res.cookie("name", "sairaj");
+  // console.log(req.cookies);
+  // res.send("login");
+})
 
 
 app.listen(PORT,()=> {

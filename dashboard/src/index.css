@@ -270,11 +270,17 @@ font-size: 15px;
   font-weight: lighter;
   opacity: 60%;
   padding: 1rem 0.5rem;
+  
 }
 
 .order-table{
   width: 100%;
   
+}
+
+.order-table tr.item {
+
+  display: table-row;
 }
 
 
