@@ -24,7 +24,7 @@ function HomePage() {
     useEffect(()=> {
       const verifyCookie = async () => {
         if(!cookies.token) {
-          navigate("/login");
+          navigate("/");
           return;
         }
         const{ data } = await axios.post(
