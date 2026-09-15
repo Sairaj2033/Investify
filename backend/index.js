@@ -18,7 +18,7 @@ const authRoute = require("./routes/AuthRoute");
 app.use(cors({ origin: [
    "http://localhost:3000",
     "http://localhost:3001",
-    "https://investify-efoocym2f-sairajpatil035-1057s-projects.vercel.app",
+    "https://investify-flame.vercel.app",
     "https://investify-iota.vercel.app"
 ],
    credentials: true }));
