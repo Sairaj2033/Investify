@@ -18,8 +18,8 @@ const authRoute = require("./routes/AuthRoute");
 app.use(cors({ origin: [
    "http://localhost:3000",
     "http://localhost:3001",
-    "https://your-frontend.vercel.app",
-    "https://your-dashboard.vercel.app"
+    "https://investify-efoocym2f-sairajpatil035-1057s-projects.vercel.app/login",
+    "https://investify-iota.vercel.app/"
 ],
    credentials: true }));
 app.use(cookieParser());
