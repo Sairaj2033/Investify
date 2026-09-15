@@ -1,24 +1,63 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState({
+    email: "",
+    password: "",
+  });
+  const { email, password } = inputValue;
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    });
+  };
+
+  const handleError = (err) =>
+    toast.error(err, {
+      position: "bottom-left",
+    });
+  const handleSuccess = (msg) =>
+    toast.success(msg, {
+      position: "bottom-left",
+    });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/login", 
-        { email, password }, 
+      const { data } = await axios.post(
+        "http://localhost:3001/login",
+        {
+          ...inputValue,
+        },
         { withCredentials: true }
       );
-      if (res.data.success) {
-        window.location.href = "/"; // Redirect to dashboard home
+      console.log(data);
+      const { success, message } = data;
+      if (success) {
+        handleSuccess(message);
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1000);
+      } else {
+        handleError(message);
       }
-    } catch (err) {
-      alert("Login failed");
+    } catch (error) {
+      console.log(error);
     }
+    setInputValue({
+      ...inputValue,
+      email: "",
+      password: "",
+    });
   };
+
+
 
   return (
   <div className="form-bg text-center">
@@ -40,39 +79,48 @@ const Login = () => {
 
 
 
-<div className="col-5 text-start" style={{margin:'2rem 4rem 4rem 5rem'}} >
+<div className="col-4 text-start" style={{margin:'2rem 4rem 4rem 5rem'}} >
   <h1 className="mb-3">Login now</h1>
   <h3 className="text-muted mb-4" style={{ fontSize: '18px' }}>
     Or track your existing application
   </h3>
-  <form onSubmit={handleSubmit}>
-    <div className="mb-4">
+
+
+  
+    <div className="mb-4 form_container">
+     
       <input  style={{height:'4rem',width:'60%'}}
         type="email"
+        name="email"
         className="form-control"
         placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleOnChange}
       />
     </div >
+
     <div className="mb-4">
+     
       <input style={{height:'4rem',width:'60%'}}
         type="password"
+        name="password"
         className="form-control"
         placeholder="Password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        onChange={handleOnChange}      />
     </div>
-    <button className="btn btn-primary" style={{width:'40%', height:'3.7rem',fontSize:'25px'}} type="submit">
+    <button className="btn btn-primary" style={{width:'40%', height:'3.7rem',fontSize:'25px',marginBottom:'1rem'}} type="submit">
       Login
     </button>
+<br />
+<span>New here? <a href="/signup" style={{textDecoration:'none'}} >Register</a></span>
+    
 <br/><br/>
 
 <span className="text-muted">By proceeding, you agree to the Zerodha<a href="/#" style={{textDecoration:'none'}}> terms & privacy policy</a></span>
 <hr className="" style={{width:'70%', opacity:'10%'}}></hr>
 <span className="text-muted">Looking to open NRI account? <a href="/#" style={{textDecoration:'none'}}>Click here</a></span>
-  </form>
+  
 </div>
 
 </div>
@@ -80,6 +128,7 @@ const Login = () => {
 
 
     </form>
+    <ToastContainer/>
     </div>
   );
 };

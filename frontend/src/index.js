@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { CookiesProvider } from 'react-cookie';
 import './index.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import HomePage from './landing_page/home/HomePage';
@@ -11,27 +12,35 @@ import SupportPage from './landing_page/Support/SupportPage';
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
-import Login from './Login';
+import Login from './landing_page/signup/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<BrowserRouter> 
+  <CookiesProvider>
+    <BrowserRouter> 
 <Navbar/> 
    <Routes>
 
     <Route path='/' element={<HomePage/>}></Route>
     <Route path='/signup'  element={<Signup/>}></Route>
+    <Route path='/login' element={<Login/>}></Route>
     <Route path='/about'   element={<AboutPage/>}></Route>
     <Route path='/product' element={<ProductPage/>}></Route>
     <Route path='/pricing' element={<PricingPage/>}></Route>
     <Route path='/support' element={<SupportPage/>}></Route>
     <Route path='/*' element={<NotFound/>}></Route>
-    <Route path='/login' element={<Login/>}></Route>
+    
     
 
    </Routes>
    <Footer/>
   </BrowserRouter> 
+  </CookiesProvider>
+
    
 );
+
+
+
+
 

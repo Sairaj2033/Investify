@@ -3,6 +3,15 @@ import React from 'react';
 
 
 function Pricing() {
+
+    
+
+
+    
+
+
+
+
     return ( 
         <div>
    <div className='container p-5' >

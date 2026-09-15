@@ -13,7 +13,7 @@
             <h1>{productName}</h1>
             <h5 style={{lineHeight:'1.7'}}>{productDescription}</h5>
            <div className='m-4'>
-             <a style={{marginRight:'5rem'}} href={tryDemo}>Try Demo</a>
+             <a style={{marginRight:'5rem'}} href='http://localhost:3000/dashboard'>Try Demo</a>
             <a href={learnMore}>Learn More</a>
            </div>
             
