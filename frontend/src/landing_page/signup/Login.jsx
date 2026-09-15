@@ -31,8 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
      const { data } = await axios.post(
-  `${process.env.REACT_APP_BACKEND_}`,
-        {
+`${process.env.REACT_APP_BACKEND_URL}/login`,        {
           ...inputValue,
         },
         { withCredentials: true }
@@ -42,7 +41,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/dashboard");
+          window.location.href = process.env.REACT_APP_DASHBOARD_URL;
         }, 1000);
       } else {
         handleError(message);

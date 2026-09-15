@@ -36,8 +36,7 @@ const handleSubmit = async  (e) => {
      e.preventDefault();
      try{
         const {  data } = await axios.post(
-        "http://localhost:3001/signup",
-        {
+`${process.env.REACT_APP_BACKEND_URL}/signup`,        {
             ...inputValue,
         },
         { withCredentials:true }
@@ -46,8 +45,7 @@ const handleSubmit = async  (e) => {
         if (success) {
             handleSuccess(message);
             setTimeout(()=> {
-                navigate("/");
-            }, 1000);
+ window.location.href = process.env.REACT_APP_DASHBOARD_URL;            }, 1000);
         } else {
             handleError(message);
         }
