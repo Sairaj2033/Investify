@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState({
         email:"",
         password:"",
@@ -44,7 +45,8 @@ const handleSubmit = async  (e) => {
         if (success) {
             handleSuccess(message);
             setTimeout(()=> {
- window.location.href = process.env.REACT_APP_DASHBOARD_URL;            }, 1000);
+            navigate("/");   
+            }, 1000);
         } else {
             handleError(message);
         }
