@@ -15,7 +15,13 @@ const app = express();
 const authRoute = require("./routes/AuthRoute");
 
 // Middleware
-app.use(cors({ origin: ["http://localhost:3000"], credentials: true }));
+app.use(cors({ origin: [
+   "http://localhost:3000",
+    "http://localhost:3001",
+    "https://your-frontend.vercel.app",
+    "https://your-dashboard.vercel.app"
+],
+   credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
 
