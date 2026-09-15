@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 
 const Signup = () => {
-    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState({
         email:"",
         password:"",
@@ -73,7 +72,7 @@ const handleSubmit = async  (e) => {
 
 <div className="row">
    <div className="col-6">
-  <img src="../media/images/account_open.svg"  style={{width:'80%',margin:'0rem 0rem 2rem 15rem'}} ></img>
+  <img src="../media/images/account_open.svg" alt="" style={{width:'80%',margin:'0rem 0rem 2rem 15rem'}} ></img>
    </div> 
 
 
