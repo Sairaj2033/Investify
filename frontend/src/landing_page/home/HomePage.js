@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -18,35 +18,35 @@ import Footer from '../Footer';
 function HomePage() {
 
 
-    const navigate = useNavigate();
-    const [cookies, removeCookie] = useCookies([]);
-    const [username, setUsername] = useState("");
-    useEffect(()=> {
-      const verifyCookie = async () => {
-        if(!cookies.token) {
-          navigate("/");
-          return;
-        }
-        const{ data } = await axios.post(
-          "http://localhost:3001",
-          {},
-          {withCredentials:true}
-        );
-        const{status, user} = data;
-        setUsername(user);
-        return status
-        ? toast(`hello ${user}`, {
-          position:"top-right",
-        })
-        : (removeCookie("token"), navigate("/login"));
+    // const navigate = useNavigate();
+    // const [cookies, removeCookie] = useCookies([]);
+    // const [username, setUsername] = useState("");
+    // useEffect(()=> {
+    //   const verifyCookie = async () => {
+    //     if(!cookies.token) {
+    //       navigate("/login");
+    //       return;
+    //     }
+    //     const{ data } = await axios.post(
+    //       "http://localhost:3001",
+    //       {},
+    //       {withCredentials:true}
+    //     );
+    //     const{status, user} = data;
+    //     setUsername(user);
+    //     return status
+    //     ? toast(`hello ${user}`, {
+    //       position:"top-right",
+    //     })
+    //     : (removeCookie("token"), navigate("/login"));
 
-      };
-      verifyCookie();
-    },[cookies, navigate, removeCookie]);
-    const Logout = () => {
-      removeCookie("token");
-      navigate("/signup");
-    };
+    //   };
+    //   verifyCookie();
+    // },[cookies, navigate, removeCookie]);
+    // const Logout = () => {
+    //   removeCookie("token");
+    //   navigate("/signup");
+    // };
 
 
 

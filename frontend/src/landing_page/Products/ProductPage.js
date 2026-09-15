@@ -1,10 +1,54 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from "react-cookie";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+
+
 import Hero from './Hero';
 import LeftSection from './LeftSection';
 import RightSection from './RightSection';
 import Universe from './Universe';
 
 function ProductPage() {
+
+
+
+
+
+        const navigate = useNavigate();
+        const [cookies, removeCookie] = useCookies([]);
+        const [username, setUsername] = useState("");
+        useEffect(()=> {
+          const verifyCookie = async () => {
+            if(!cookies.token) {
+              navigate("/login");
+              return;
+            }
+            const{ data } = await axios.post(
+process.env.REACT_APP_BACKEND_URL,              {},
+              {withCredentials:true}
+            );
+            const{status, user} = data;
+            setUsername(user);
+            return status
+            ? toast(`hello ${user}`, {
+              position:"top-right",
+            })
+            : (removeCookie("token"), navigate("/login"));
+    
+          };
+          verifyCookie();
+        },[cookies, navigate, removeCookie]);
+        const Logout = () => {
+          removeCookie("token");
+          navigate("/signup");
+        };
+    
+
+
     return ( 
        <>
        <Hero/>
