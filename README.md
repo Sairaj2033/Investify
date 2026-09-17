@@ -155,33 +155,7 @@ Investify implements **JWT-based authentication and authorization** with **bcryp
 
 ### Authentication Flow
 
-```text
-                    👤 USER
-                       │
-                       ▼
-               ┌───────────────┐
-               │ Signup / Login│
-               └───────┬───────┘
-                       │
-                       ▼
-               🔒 bcrypt Hashing
-                       │
-                       ▼
-                 🗄️ MongoDB
-                       │
-                       ▼
-                  Credential
-                  Verification
-                       │
-                       ▼
-                 🔑 JWT Token
-                       │
-                       ▼
-             🛡️ Protected Routes
-                       │
-                       ▼
-              📊 Trading Dashboard
-```
+<img src=""/>
 
 ### 🔒 Security Technologies
 
