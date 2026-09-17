@@ -155,7 +155,7 @@ Investify implements **JWT-based authentication and authorization** with **bcryp
 
 ### Authentication Flow
 
-<img src=""/>
+<img src="readme_assets/mermaid-diagram.png"/>
 
 ### 🔒 Security Technologies
 
