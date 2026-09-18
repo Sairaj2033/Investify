@@ -21,13 +21,10 @@ function ProductPage() {
 
         useEffect(()=> {
           const verifyCookie = async () => {
-            if(!cookies.token) {
-              navigate("/login");
-              return;
-            }
+           
 
             const{ data } = await axios.post(
-             process.env.REACT_APP_BACKEND_URL,{},
+             `${process.env.REACT_APP_BACKEND_URL}/verify`,{},
               {withCredentials:true}
             );
 
@@ -46,7 +43,7 @@ function ProductPage() {
 
           verifyCookie();
 
-        },[cookies, navigate, removeCookie]);
+        },[]);
 
         const Logout = () => {
           removeCookie("token");
