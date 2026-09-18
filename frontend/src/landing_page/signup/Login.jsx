@@ -43,7 +43,7 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
            navigate("/product");
-                  }, 1000);
+                  }, 3000);
       } else {
         handleError(message);
       }

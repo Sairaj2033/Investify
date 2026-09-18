@@ -37,7 +37,7 @@ process.env.REACT_APP_BACKEND_URL,              {},
             ? toast(`hello ${user}`, {
               position:"top-right",
             })
-            : (removeCookie("token"), navigate("/product"));
+            : (removeCookie("token"), navigate("/login"));
     
           };
           verifyCookie();
