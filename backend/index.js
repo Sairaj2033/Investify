@@ -11,6 +11,7 @@ const { PositionsModel } = require('./model/PositionsModel');
 const PORT = process.env.PORT || 3001;
 const uri = process.env.MONGO_URL;
 const app = express();
+app.set("trust proxy", 1);
 
 const authRoute = require("./routes/AuthRoute");
 
