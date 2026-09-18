@@ -14,41 +14,44 @@ import Universe from './Universe';
 
 function ProductPage() {
 
-
-
-
-
         const navigate = useNavigate();
         const [cookies, removeCookie] = useCookies([]);
         const [username, setUsername] = useState("");
+
+
         useEffect(()=> {
           const verifyCookie = async () => {
             if(!cookies.token) {
               navigate("/login");
               return;
             }
+
             const{ data } = await axios.post(
-process.env.REACT_APP_BACKEND_URL,              {},
+             process.env.REACT_APP_BACKEND_URL,{},
               {withCredentials:true}
             );
+
             console.log("Backend response:", data);
-            const{status, user} = data;
+
+           const{status, user} = data;
+
             setUsername(user);
+
             return status
             ? toast(`hello ${user}`, {
               position:"top-right",
             })
             : (removeCookie("token"), navigate("/login"));
-    
           };
+
           verifyCookie();
+
         },[cookies, navigate, removeCookie]);
+
         const Logout = () => {
           removeCookie("token");
           navigate("/signup");
         };
-    
-
 
     return ( 
        <>
@@ -102,3 +105,37 @@ process.env.REACT_APP_BACKEND_URL,              {},
 }
 
 export default ProductPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
