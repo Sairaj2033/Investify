@@ -31,6 +31,7 @@ function ProductPage() {
 process.env.REACT_APP_BACKEND_URL,              {},
               {withCredentials:true}
             );
+            console.log("Backend response:", data);
             const{status, user} = data;
             setUsername(user);
             return status
