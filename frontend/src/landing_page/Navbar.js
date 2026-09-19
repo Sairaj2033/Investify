@@ -1,7 +1,17 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 
 function NavBar() {
+
+  const{ isAuthenticated, logout, user } = useAuth();
+  const navigate =  useNavigate();
+
+  const handleLogout = async () => {
+    await  logout();
+    navigate("/login")
+  };
+
   return (
     
       <nav class="navbar navbar-expand-lg border-bottom" style={{backgroundColor:'#FFFFFF'}} >
@@ -44,7 +54,7 @@ function NavBar() {
                 </Link>
               </li>
                 <li class="nav-item">
-                <Link class="nav-link active" to="support">
+                <Link class="nav-link active" to="/support">
                   Support
                 </Link>
               </li>

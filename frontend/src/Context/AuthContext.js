@@ -31,6 +31,21 @@ export const AuthProvider = ({ children }) => {
     verifyAuth();
   }, []);
 
+
+  const logout = async () => {
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/logout`,
+        {}, 
+        {withCredentials:'true'}
+      );
+
+      setUser(null);
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
+  };
+
   return (
     <AuthContext.Provider value={{ user, isAuthenticated: !!user, isLoading }}>
       {children}
