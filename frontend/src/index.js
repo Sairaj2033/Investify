@@ -13,9 +13,12 @@ import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
 import Login from './landing_page/signup/Login';
+import { AuthProvider }from './Context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+   
+<AuthProvider>
   <CookiesProvider>
     <BrowserRouter> 
 <Navbar/> 
@@ -36,7 +39,7 @@ root.render(
    <Footer/>
   </BrowserRouter> 
   </CookiesProvider>
-
+</AuthProvider>
    
 );
 
