@@ -18,7 +18,8 @@ const Signup = () => {
         setInputValue({
             ...inputValue,
             [name]: value,
-        });
+      
+          });
     };
 
 
