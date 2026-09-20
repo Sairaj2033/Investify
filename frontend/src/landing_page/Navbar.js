@@ -33,30 +33,17 @@ function NavBar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               
               {/* Conditional Rendering for Auth */}
-              {isAuthenticated ? (
-                <>
-                  <li className="nav-item">
-                    <span className="nav-link active text-muted" style={{ cursor: "default" }}>
-                      Hi, {user?.username}
-                    </span>
-                  </li>
-                  <li className="nav-item">
-                    <button 
-                      onClick={handleLogout} 
-                      className="nav-link active" 
-                      style={{ border: "none", background: "transparent", cursor: "pointer" }}
-                    >
-                      Logout
-                    </button>
-                  </li>
-                </>
-              ) : (
+            
+               
+                 
+               
+         
                 <li className="nav-item">
                   <Link className="nav-link active" aria-current="page" to="/signup">
                     Signup
                   </Link>
                 </li>
-              )}
+              
 
               <li className="nav-item">
                <Link className="nav-link active" aria-current="page" to="/about">
@@ -79,6 +66,18 @@ function NavBar() {
                 </Link>
               </li>
             </ul> 
+            {isAuthenticated  (
+              <>
+              <span className="nav-link active text-muted" style={{ cursor: "default" }}>
+                      Hi, {user?.username}
+                    </span>
+                    <button 
+                      onClick={handleLogout} 
+                      className="nav-link active btn btn-primary"  >
+                      Logout
+                    </button>
+                    </>
+            )}
           </form>          
         </div>
       </div>
