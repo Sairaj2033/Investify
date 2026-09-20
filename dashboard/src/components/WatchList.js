@@ -107,7 +107,7 @@ const WatchList = () => {
       </div>
 
       {/* LIST */}
-      <div style={{ marginTop: "1rem", border: "2px dotted green" }}>
+      <div style={{ marginTop: "1rem" }}>
         <ul className="list">
           {watchlist.map((stock, index) => {
             return <WatchListItem stock={stock} key={index} />;

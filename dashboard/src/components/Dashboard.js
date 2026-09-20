@@ -12,9 +12,9 @@ import Bids from './Bids';
 
 function Dashboard() {
   return ( 
-    <div className='dashboard-container' style={{ display: 'flex', width: '100%',border:'1px dotted blue' }}>
+    <div className='dashboard-container' style={{ display: 'flex', width: '100%',border:'1px solid black' }}>
       {/* LEFT PANEL */}
-      <div style={{ width: '29.2%', borderRight: '1px solid #eeeaea', border:'1px dotted red',paddingLeft:'2rem'}}>
+      <div style={{ width: '29.2%', borderRight: '1px solid #eeeaea', border:'1px solid black',paddingLeft:'2rem'}}>
         <Watchlist />
       </div> 
       

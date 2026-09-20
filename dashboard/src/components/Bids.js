@@ -3,7 +3,7 @@ import React from 'react';
 function Bids() {
     return  (
    <h1>
-    Bids
+    Bids : Working on it 
    </h1>
     );
 }
