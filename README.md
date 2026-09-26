@@ -149,7 +149,7 @@ Investify provides a centralized trading interface where users can monitor their
 
 ---
 
-## 🔐 JWT-based authentication and authorization** with **bcrypt password hashing**.
+## 🔐 JWT-based authentication and authorization with bcrypt password hashing
 
 Investify implements **JWT-based authentication and authorization** with **bcrypt password hashing**.
 
